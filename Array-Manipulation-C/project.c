@@ -9,8 +9,6 @@ int searching(int a[100]);
 
 int sorting(int a[100]);
 
-int exiting(int a[100]);
-
 int main ()
 
 {
@@ -54,7 +52,7 @@ case 3:  searching(arr[100]);
 case 4:  sorting(arr[100]);
 
     break; 
-case 5:  exiting(arr[100]);
+case 5:  exit(1);
 
     break;   
 }
@@ -161,12 +159,6 @@ int deletion(int a[100])
    }
    
    return 0;
-}
-
-int exiting(int a[100])
-
-{
-	exit(1);
 }
 
 
