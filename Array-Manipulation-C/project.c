@@ -1,19 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int insert(int a[100]);
+int insert();
 
-int deletion(int a[100]);
+int deletion();
 
-int searching(int a[100]);
+int searching();
 
-int sorting(int a[100]);
+int sorting();
 
 int main ()
 
 {
-	
-int arr[100],c,i,n,s;
+ 
+ int c,s;	
 
 while (1)
 
@@ -37,19 +37,19 @@ switch (c)
 
 {
 	
-case 1: insert(arr[100]);
+case 1: insert();
 
     break;
     
-case 2: deletion(arr[100]);
+case 2: deletion();
 
     break;   
     
-case 3:  searching(arr[100]);
+case 3:  searching();
 
     break; 
 
-case 4:  sorting(arr[100]);
+case 4:  sorting();
 
     break; 
 case 5:  exit(1);
@@ -69,10 +69,10 @@ scanf("%d",&s);
 
 
 
-int insert(int a[100])
+int insert()
 {
  	
-  int p,i,k,j,x,n;
+  int a[100],p,i,k,j,x,n;
   
   
   printf("Enter number of elements in array\n");
@@ -119,10 +119,10 @@ int insert(int a[100])
  
  
  
-int deletion(int a[100])
+int deletion()
 {
  	
-  int p,i,k,j,n;
+  int a[100],p,i,k,j,n;
   
   printf("Enter number of elements in array\n");
   
@@ -164,9 +164,9 @@ int deletion(int a[100])
 
 
 
-int searching(int a[100])
+int searching()
 {
-	int n,i,num,pos,found;
+	int a[100],n,i,num,pos,found;
 	
 	 printf("Enter number of elements in array\n");
   
@@ -205,9 +205,9 @@ int searching(int a[100])
 
 
 
-int sorting(int a[100])
+int sorting()
 {
-	int n,i,j,temp;
+	int a[100],n,i,j,temp;
 	 printf("Enter number of elements in array\n");
   
    scanf("%d", &n);
