@@ -5,13 +5,14 @@
 int arr[100];
 
 // Function prototypes
+void menu();
 int insert(int *n);
-int deletion(int *n);
+int Delete(int *n);
 int searching(int n);
 int sorting(int n);
 void clear_screen();
 void display_array(int n);
-void get_user_input(int *n);
+void add_array_elements(int *n);
 
 int main ()
 {
@@ -19,36 +20,44 @@ int main ()
 
     while (1)
     {
-        printf("Enter choice\n");
-        printf("1. Insertion\n");
-        printf("2. Deletion\n");
-        printf("3. Searching\n");
-        printf("4. Sorting\n");
-        printf("5. Exiting\n");
-
+        menu();
         scanf("%d", &c);
 
         switch (c)
         {
-            case 1: insert(&n);
+            case 1: add_array_elements(&n);
                 break;
-            case 2: deletion(&n);
+            case 2: insert(&n);
                 break;
-            case 3: searching(n);
+            case 3: Delete(&n);
                 break;
-            case 4: sorting(n);
+            case 4: searching(n);
                 break;
-            case 5: exit(1);
+            case 5: sorting(n);
+                break;
+            case 6: display_array(n);
+                break;
+            case 7: clear_screen();
+                break;
+            case 8: exit(1);
                 break;
             default: printf("Invalid choice. Please try again.\n");
         }
-
-        printf("Enter any number to clear the screen\n");
-        scanf("%d", &s);
-        clear_screen();
     }
 }
-
+// Function to display menu.
+void menu()
+{
+    printf("Enter choice\n");
+    printf("1. Fill Array\n");
+    printf("2. Insert\n");
+    printf("3. Delete\n");
+    printf("4. Search\n");
+    printf("5. Sort\n");
+    printf("6. Display array\n");
+    printf("7. Clear screen\n");
+    printf("8. Exit\n");
+}
 // Function to insert an element into the array
 int insert(int *n)
 {
@@ -78,7 +87,7 @@ int insert(int *n)
 }
 
 // Function to delete an element from the array
-int deletion(int *n)
+int Delete(int *n)
 {
     int p, k;
 
@@ -153,17 +162,21 @@ void clear_screen()
 #else
     system("clear");
 #endif
+//menu();
 }
 
 // Function to display the array
 void display_array(int n)
 {
+    if (n == 0)
+        printf("there are no elements in the array");
     for (int i = 0; i < n; i++)
-        printf("%d\n", arr[i]);
+        printf("%d ", arr[i]);
+    printf("\n");
 }
 
 // Function to get user input for the array
-void get_user_input(int *n)
+void add_array_elements(int *n)
 {
     printf("Enter number of elements in array\n");
     scanf("%d", n);
